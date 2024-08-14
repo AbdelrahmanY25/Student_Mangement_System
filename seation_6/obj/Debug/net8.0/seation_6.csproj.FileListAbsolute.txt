@@ -1,0 +1,14 @@
+D:\My_Projects\Back End C# Asp .Net\Erasoft Seasions\seation_6\seation_6\seation_6\obj\Debug\net8.0\seation_6.GeneratedMSBuildEditorConfig.editorconfig
+D:\My_Projects\Back End C# Asp .Net\Erasoft Seasions\seation_6\seation_6\seation_6\obj\Debug\net8.0\seation_6.AssemblyInfoInputs.cache
+D:\My_Projects\Back End C# Asp .Net\Erasoft Seasions\seation_6\seation_6\seation_6\obj\Debug\net8.0\seation_6.AssemblyInfo.cs
+D:\My_Projects\Back End C# Asp .Net\Erasoft Seasions\seation_6\seation_6\seation_6\obj\Debug\net8.0\seation_6.csproj.CoreCompileInputs.cache
+D:\My_Projects\Back End C# Asp .Net\Erasoft Seasions\seation_6\seation_6\seation_6\bin\Debug\net8.0\seation_6.exe
+D:\My_Projects\Back End C# Asp .Net\Erasoft Seasions\seation_6\seation_6\seation_6\bin\Debug\net8.0\seation_6.deps.json
+D:\My_Projects\Back End C# Asp .Net\Erasoft Seasions\seation_6\seation_6\seation_6\bin\Debug\net8.0\seation_6.runtimeconfig.json
+D:\My_Projects\Back End C# Asp .Net\Erasoft Seasions\seation_6\seation_6\seation_6\bin\Debug\net8.0\seation_6.dll
+D:\My_Projects\Back End C# Asp .Net\Erasoft Seasions\seation_6\seation_6\seation_6\bin\Debug\net8.0\seation_6.pdb
+D:\My_Projects\Back End C# Asp .Net\Erasoft Seasions\seation_6\seation_6\seation_6\obj\Debug\net8.0\seation_6.dll
+D:\My_Projects\Back End C# Asp .Net\Erasoft Seasions\seation_6\seation_6\seation_6\obj\Debug\net8.0\refint\seation_6.dll
+D:\My_Projects\Back End C# Asp .Net\Erasoft Seasions\seation_6\seation_6\seation_6\obj\Debug\net8.0\seation_6.pdb
+D:\My_Projects\Back End C# Asp .Net\Erasoft Seasions\seation_6\seation_6\seation_6\obj\Debug\net8.0\seation_6.genruntimeconfig.cache
+D:\My_Projects\Back End C# Asp .Net\Erasoft Seasions\seation_6\seation_6\seation_6\obj\Debug\net8.0\ref\seation_6.dll
