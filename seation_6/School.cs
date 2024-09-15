@@ -9,25 +9,27 @@ namespace seation_6
 {
     internal class School
     {
-        public School(List<Students> students = null, List<Courses> courses = null)
+        public School(List<Students>? students = null, List<Courses>? courses = null)
         {
-            Students = new List<Students>();
-            Courses = new List<Courses>();
+            _students = students;
+            _courses = courses;
         }
 
-        public List<Students> Students { get; set; }
-        public List<Courses> Courses { get; set; }
+        private readonly List<Students>? _students;
+        private readonly List<Courses>? _courses; 
+        public List<Students>? Students => _students;
+        public List<Courses>? Courses => _courses;
 
         public void DisplayAllStudensts()
         {
-            foreach (var student in Students)
+            foreach (var student in _students)
             {
                 student.DesplayDetails();
             };
         }      
         public void DisplayAllCourses()
         {
-            foreach (var course in Courses)
+            foreach (var course in _courses)
             {
                 course.DesplayDetails();
             };
@@ -35,21 +37,21 @@ namespace seation_6
 
         public void AddStudent(Students student)
         {
-            Students.Add(student);
+            _students.Add(student);
             Console.WriteLine($"Student {student.Name} Added");
         }
         public void AddCourse(Courses course)
         {
-            Courses.Add(course);
+            _courses.Add(course);
             Console.WriteLine($"Course {course.Name} Added");
         }
 
         public void EnrollStudentInCourse(int StudentId, Courses courseName)
         {
-            Students student = Students.Find((e) => e.Id == StudentId);
+            Students? student = _students.Find((e) => e.Id == StudentId);
 
             //Student student = new();
-            //foreach (var e in Students)
+            //foreach (var e in _students)
             //{
             //    if(e.Id == StudentId)
             //    {

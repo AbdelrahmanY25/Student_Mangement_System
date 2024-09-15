@@ -8,18 +8,19 @@ namespace seation_6
 {
     internal class Courses
     {
+
+        private readonly string _name;
+        private readonly string _instructor;
+        public string Name => _name;
+        public string Instructor => Instructor;
         public Courses(string name = "None", string instructor = "Unknown")
         {
-            Name = name;
-            Instructor = instructor;
-        }
-
-       public string Name {  get; set; }
-       public string Instructor { get; set; }
-
+            _name = name;
+            _instructor = instructor;
+        }        
         public void DesplayDetails()
         {
-            Console.WriteLine($"Name: {Name}, Instructor: {Instructor}");
+            Console.WriteLine($"Name: {_name}, Instructor: {_instructor}");
         }
     }
 }

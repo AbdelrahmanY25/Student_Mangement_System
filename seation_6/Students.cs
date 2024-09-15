@@ -8,28 +8,30 @@ namespace seation_6
 {
     internal class Students
     {
-        public Students(string name = "Unknown", int id = 0, List<Courses> courses = null)
+        public Students(string name = "Unknown", int id = 0, List<Courses>? courses = null)
         {
-            Name = name;
-            Id = id;
-            Courses = new List<Courses>();
+            _name = name;
+            _id = id <= 0 ? 0 : id;
+            _courses = courses;
         }
 
-        public string Name { get; set; }
-        public int Id { get; set; }
-        public List<Courses> Courses { get; set; }
+        private readonly string _name;
+        private readonly int _id;
+        private readonly List<Courses> _courses;
+        public string Name => _name;    
+        public int Id => _id;
+        public List<Courses> Courses => _courses;
 
         public void DesplayDetails()
         {
-            Console.Write($"Name: {Name}, Id: {Id}, Courses ");
+            Console.Write($"Name: {_name}, Id: {_id}, Courses ");
             Console.Write("[");
-            foreach(var course in Courses)
+            foreach(var course in _courses)
             {
                 Console.Write($" {course.Name} ");
             }
             Console.Write("]");
             Console.WriteLine();
-
         }
     }
 }
