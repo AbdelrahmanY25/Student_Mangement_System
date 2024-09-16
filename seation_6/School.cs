@@ -20,46 +20,39 @@ namespace seation_6
         public List<Students>? Students => _students;
         public List<Courses>? Courses => _courses;
 
-        public void DisplayAllStudensts()
+        public string DisplayAllStudensts()
         {
+            var students = "";
             foreach (var student in _students)
             {
-                student.DesplayDetails();
+                students += student.DesplayDetails() + "\n";
             };
+            return students;
         }      
-        public void DisplayAllCourses()
+        public string DisplayAllCourses()
         {
+            var courses = "";
             foreach (var course in _courses)
             {
-                course.DesplayDetails();
+                courses += course.DesplayDetails() + "\n";
             };
+            return courses;
         }
 
-        public void AddStudent(Students student)
+        public string AddStudent(Students student)
         {
             _students.Add(student);
-            Console.WriteLine($"Student {student.Name} Added");
+            return $"Student {student.Name} Added";
         }
-        public void AddCourse(Courses course)
+        public string AddCourse(Courses course)
         {
             _courses.Add(course);
-            Console.WriteLine($"Course {course.Name} Added");
+            return $"Course {course.Name} Added";
         }
 
         public void EnrollStudentInCourse(int StudentId, Courses courseName)
         {
             Students? student = _students.Find((e) => e.Id == StudentId);
-
-            //Student student = new();
-            //foreach (var e in _students)
-            //{
-            //    if(e.Id == StudentId)
-            //    {
-            //        student = e;
-            //        break;
-            //    }
-            //}
-
             student.Courses.Add(courseName);
         }
     }

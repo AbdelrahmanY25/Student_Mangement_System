@@ -15,23 +15,54 @@ namespace seation_6
             _courses = courses;
         }
 
+        public Courses this[int course] 
+        {
+            get
+            {
+                return _courses[course];
+            }
+            set
+            {
+                _courses[course] = value;
+            }
+        }
+
+        public Courses this[string inst] 
+        {
+            get 
+            {
+                var cours = _courses.Find((c) => c.Instructor == inst);
+                return cours != null ? cours : null;
+            } 
+            set
+            {
+                for (int i = 0; i < _courses.Count; i++) 
+                {
+                    if (_courses[i].Instructor == inst)
+                    {
+                        _courses[i] = value;
+                        return;
+                    }
+                }
+            }
+        } 
+
         private readonly string _name;
         private readonly int _id;
         private readonly List<Courses> _courses;
         public string Name => _name;    
         public int Id => _id;
         public List<Courses> Courses => _courses;
-
-        public void DesplayDetails()
+        public string DesplayDetails()
         {
-            Console.Write($"Name: {_name}, Id: {_id}, Courses ");
-            Console.Write("[");
-            foreach(var course in _courses)
+            var details = $"Name: {_name}, Id: {_id}, Courses [";
+            foreach (var course in _courses)
             {
-                Console.Write($" {course.Name} ");
+                details += $" {course.Name} ";
             }
-            Console.Write("]");
-            Console.WriteLine();
+            details += "]";
+            return details;
         }
+
     }
 }
