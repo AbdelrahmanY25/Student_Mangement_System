@@ -8,7 +8,6 @@ namespace seation_6
 {
     internal class Courses
     {
-
         private readonly string _name;
         private readonly string _instructor;
         public string Name => _name;

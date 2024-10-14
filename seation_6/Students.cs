@@ -49,7 +49,7 @@ namespace seation_6
 
         private readonly string _name;
         private readonly int _id;
-        private readonly List<Courses> _courses;
+        private readonly List<Courses> _courses = new List<Courses>();
         public string Name => _name;    
         public int Id => _id;
         public List<Courses> Courses => _courses;

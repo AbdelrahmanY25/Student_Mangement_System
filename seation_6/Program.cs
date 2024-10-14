@@ -28,7 +28,7 @@
                 Console.WriteLine(students2.DesplayDetails());
                 Console.WriteLine(students3.DesplayDetails());
 
-                Console.WriteLine("\n======================== Student's Courses With Indexer Class ============================\n");
+                Console.WriteLine("\n======================== Student's Courses With Indexer ============================\n");
 
                 Console.WriteLine(students1[1].DesplayDetails());
                 students1[1] = new Courses("C++", "Abdelrahman");
@@ -42,11 +42,18 @@
 
             School school = new School(new() { students1, students2, students3 }, new() { course1, course2, course3 });
 
+            Console.WriteLine("\n======================== School's Students With Indexer ============================\n");
+
+            Console.WriteLine(school[2].DesplayDetails());
+            Console.WriteLine(school["Momen"].DesplayDetails());
+
             Console.WriteLine("============ Add Students =============\n");
-            Console.WriteLine(school.AddStudent(new("Boda", 4200420, new() { course1 })));
+            school.StudentAdded += School_StudentAdded;
+            school.AddStudent(new("Boda", 4200420, new() { course1 }));
 
             Console.WriteLine("\n============ Add Courses =============\n");
-            Console.WriteLine(school.AddCourse(new("JavaScript", "Reda Islam")));
+            school.CoursesAdded += School_CoursesAdded;
+            school.AddCourse(new("JavaScript", "Reda Islam"));
 
             Console.WriteLine("\n============ All Students =============\n");
             Console.WriteLine(school.DisplayAllStudensts());
@@ -60,6 +67,15 @@
             Console.WriteLine(school.DisplayAllStudensts());
 
             Console.ReadKey();
+        }
+        private static void School_CoursesAdded(Courses course)
+        {
+            Console.WriteLine($"Course {course.Name} Added");
+        }
+
+        private static void School_StudentAdded(Students student)
+        {
+            Console.WriteLine($"Student {student.Name} Added");
         }
     }
 }

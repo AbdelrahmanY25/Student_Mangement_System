@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = student_mangement
-build_property.ProjectDir = D:\My_Projects\Back End C# Asp .Net\Erasoft Seasions\seation_6\Student_Mangement_System\seation_6\
+build_property.ProjectDir = D:\My_Projects\Back End C# Asp .Net\Projects On C#\Student_Mangement_System\seation_6\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\My_Projects\\Back End C# Asp .Net\\Erasoft Seasions\\seation_6\\Student_Mangement_System\\seation_6\\student_mangement.csproj": {}
+    "D:\\My_Projects\\Back End C# Asp .Net\\Projects On C#\\Student_Mangement_System\\seation_6\\student_mangement.csproj": {}
   },
   "projects": {
-    "D:\\My_Projects\\Back End C# Asp .Net\\Erasoft Seasions\\seation_6\\Student_Mangement_System\\seation_6\\student_mangement.csproj": {
+    "D:\\My_Projects\\Back End C# Asp .Net\\Projects On C#\\Student_Mangement_System\\seation_6\\student_mangement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\My_Projects\\Back End C# Asp .Net\\Erasoft Seasions\\seation_6\\Student_Mangement_System\\seation_6\\student_mangement.csproj",
+        "projectUniqueName": "D:\\My_Projects\\Back End C# Asp .Net\\Projects On C#\\Student_Mangement_System\\seation_6\\student_mangement.csproj",
         "projectName": "student_mangement",
-        "projectPath": "D:\\My_Projects\\Back End C# Asp .Net\\Erasoft Seasions\\seation_6\\Student_Mangement_System\\seation_6\\student_mangement.csproj",
+        "projectPath": "D:\\My_Projects\\Back End C# Asp .Net\\Projects On C#\\Student_Mangement_System\\seation_6\\student_mangement.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\My_Projects\\Back End C# Asp .Net\\Erasoft Seasions\\seation_6\\Student_Mangement_System\\seation_6\\obj\\",
+        "outputPath": "D:\\My_Projects\\Back End C# Asp .Net\\Projects On C#\\Student_Mangement_System\\seation_6\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -61,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
