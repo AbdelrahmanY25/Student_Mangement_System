@@ -4,76 +4,68 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("======================== Courses Class ============================\n");
+            Console.WriteLine("======================== Course Class ============================\n");
 
-            #region ListOfCourses
-                Courses course1 = new Courses("C#","Hassan");
-                Courses course2 = new Courses("Java", "Ibrahim");
-                Courses course3 = new Courses("PHP", "Mohamed");
+            #region ListOfCourse
+                Course course1 = Course.AddCourse(".Net C#", "Mohammed Nabih");
+                Course course2 = Course.AddCourse("Basics With C++", "Hossam Ibrahim");
+                Course course3 = Course.AddCourse("Laravel PHP", "Mostafa Mohsen");
 
-                Console.WriteLine(course1.DesplayDetails());
-                Console.WriteLine(course2.DesplayDetails());
-                Console.WriteLine(course3.DesplayDetails());
+                Console.WriteLine(Course.DesplayDetails(course1));
+                Console.WriteLine(Course.DesplayDetails(course2));
+                Console.WriteLine(Course.DesplayDetails(course3));
             #endregion
             Console.WriteLine("\n======================== Students Class ============================\n");
 
             #region ListOfStudents
-                Students students1 = new Students("Abdelrahman", 4200614, new() { course1, course2, course3 });
+                Student students1 = Student.AddStudent("Abdelrahman", new() { course1, course2 });
+                                 
+                Student students2 = Student.AddStudent("Mohammed Hassanien", new() { course1 });
+                                 
+                Student students3 = Student.AddStudent("Abdo El saied", new() { course1, course2, course3 });
 
-                Students students2 = new Students("Momen", 435126, new() { course1, course2 });
+                Console.WriteLine(Student.DesplayDetails(students1));
+                Console.WriteLine(Student.DesplayDetails(students2));
+                Console.WriteLine(Student.DesplayDetails(students3));
 
-                Students students3 = new Students("Ali", 668852, new() { course2 });
+            Console.WriteLine("\n======================== Student's Course With Indexer ============================\n");
 
-                Console.WriteLine(students1.DesplayDetails());
-                Console.WriteLine(students2.DesplayDetails());
-                Console.WriteLine(students3.DesplayDetails());
+            Console.WriteLine(Course.DesplayDetails(course1[1]));
 
-                Console.WriteLine("\n======================== Student's Courses With Indexer ============================\n");
-
-                Console.WriteLine(students1[1].DesplayDetails());
-                students1[1] = new Courses("C++", "Abdelrahman");
-                Console.WriteLine(students1[1].DesplayDetails());
-
-                Console.WriteLine(students3["Ibrahim"].DesplayDetails());
-                students3["Ibrahim"] = new Courses("HTML", "Osama");
-                Console.WriteLine(students3["Osama"].DesplayDetails());
             #endregion
-            Console.WriteLine("\n======================== School Class ============================");
 
-            School school = new School(new() { students1, students2, students3 }, new() { course1, course2, course3 });
+            Console.WriteLine("\n============ Add Students To School =============\n");
+            School.StudentAdded += School_StudentAdded;
+            School.AddStudent(students1);
+            School.AddStudent(students2);
+            School.AddStudent(students3);
 
-            Console.WriteLine("\n======================== School's Students With Indexer ============================\n");
-
-            Console.WriteLine(school[2].DesplayDetails());
-            Console.WriteLine(school["Momen"].DesplayDetails());
-
-            Console.WriteLine("============ Add Students =============\n");
-            school.StudentAdded += School_StudentAdded;
-            school.AddStudent(new("Boda", 4200420, new() { course1 }));
-
-            Console.WriteLine("\n============ Add Courses =============\n");
-            school.CoursesAdded += School_CoursesAdded;
-            school.AddCourse(new("JavaScript", "Reda Islam"));
+            Console.WriteLine("\n============ Add Course To School =============\n");
+            School.CourseAdded += School_CourseAdded;
+            School.AddCourse(course1);
+            School.AddCourse(course2);
+            School.AddCourse(course3);
 
             Console.WriteLine("\n============ All Students =============\n");
-            Console.WriteLine(school.DisplayAllStudensts());
+            Console.WriteLine(Student.DisplayAllStudensts());
 
-            Console.WriteLine("\n============ All Courses =============\n");
-            Console.WriteLine(school.DisplayAllCourses());
+            Console.WriteLine("\n============ All Course =============\n");
+            Console.WriteLine(Course.DisplayAllCourse());
 
-            Console.WriteLine("\n============ Update Courses =============");
-            school.EnrollStudentInCourse(4200420, new("JavaScript", "Reda Islam"));
+            Console.WriteLine("\n============ Update Course =============");
+            School.EnrollStudentInCourse(2, course3);
             Console.WriteLine();
-            Console.WriteLine(school.DisplayAllStudensts());
+            Console.WriteLine(Student.DisplayAllStudensts());
 
             Console.ReadKey();
         }
-        private static void School_CoursesAdded(Courses course)
+
+        private static void School_CourseAdded(Course course)
         {
             Console.WriteLine($"Course {course.Name} Added");
         }
 
-        private static void School_StudentAdded(Students student)
+        private static void School_StudentAdded(Student student)
         {
             Console.WriteLine($"Student {student.Name} Added");
         }

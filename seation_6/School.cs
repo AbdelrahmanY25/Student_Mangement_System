@@ -9,72 +9,34 @@ namespace seation_6
 {
     internal class School
     {
-        public delegate void AddStudentsHandler(Students student);
-        public delegate void AddCoursesHandler(Courses course);
+        public delegate void AddStudentHandler(Student student);
+        public delegate void AddCourseHandler(Course course);
 
-        public event AddStudentsHandler? StudentAdded;
-        public event AddCoursesHandler? CoursesAdded;
-        public Students this[int s]
-        {
-            get
-            {
-                return _students[s];
-            }
-        }
+        public static event AddStudentHandler? StudentAdded;
+        public static event AddCourseHandler? CourseAdded;
 
-        public Students this[string name]
+        private static readonly List<Student>? _student = new List<Student>();
+        private static readonly List<Course>? _course = new List<Course>();
+        public List<Student>? Std => _student;
+        public List<Course>? Coursies => _course;
+        
+        public static bool AddStudent(Student student)
         {
-            get
-            {
-                var res = _students.Find((s) => s.Name == name);
-                return res != null ? res : null;
-            }
-        }
-        public School(List<Students>? students = null, List<Courses>? courses = null)
-        {
-            _students = students;
-            _courses = courses;
-        }
-
-        private readonly List<Students>? _students;
-        private readonly List<Courses>? _courses; 
-        public List<Students>? Students => _students;
-        public List<Courses>? Courses => _courses;
-
-        public string DisplayAllStudensts()
-        {
-            var students = "";
-            foreach (var student in _students)
-            {
-                students += student.DesplayDetails() + "\n";
-            };
-            return students;
-        }      
-        public string DisplayAllCourses()
-        {
-            var courses = "";
-            foreach (var course in _courses)
-            {
-                courses += course.DesplayDetails() + "\n";
-            };
-            return courses;
-        }
-
-        public bool AddStudent(Students student)
-        {
-            _students.Add(student);
+            _student.Add(student);
             StudentAdded?.Invoke(student);
             return true;
         }
-        public bool AddCourse(Courses course)
+        public static bool AddCourse(Course course)
         {
-            _courses.Add(course);
-            CoursesAdded(course);
+            _course.Add(course);
+            CourseAdded(course);
             return true;
         }
-        public void EnrollStudentInCourse(int StudentId, Courses courseName)
+        public static void EnrollStudentInCourse(int studentId, Course courseName)
         {
-            Students? student = _students.Find((e) => e.Id == StudentId);
+            Student student = _student.FirstOrDefault(s => s.Id == studentId);
+            if (student == null)
+                throw new Exception("Student not found");
             student.Courses.Add(courseName);
         }
     }
